@@ -18,8 +18,8 @@ class Monitoring(commands.Cog):
             print(f"[COMMAND] [IN DM] [{datetime.now()}] {message.author} ({message.author.id}) - {message.content.lower()}.\n")
         
             return
-        
-        print(f"[MESSAGE] [{message.guild.name} - {message.guild.id} [{datetime.now()}] {message.author} ({message.author.id}) - {message.content.lower()}.\n")
+        if isinstance(message.channel, DMChannel):
+            print(f"[MESSAGE] [IN DM] [{message.guild.name} - {message.guild.id} [{datetime.now()}] {message.author} ({message.author.id}) - {message.content.lower()}.\n")
 
     @commands.Cog.listener()
     async def on_connect(self):

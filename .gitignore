@@ -1,2 +1,4 @@
 Bot Files/config.json
 Bot Files/cogs/__pycache__
+Dockerfile
+start.sh 

@@ -8,13 +8,17 @@ class Monitoring(commands.Cog):
     async def on_message(self,message): 
         if message.author.bot:
             return
+        
         if message.content.lower().startswith("nm!") and not isinstance(message.channel,DMChannel):
             print(f"[COMMAND] [{message.guild.name} - {message.guild.id} [{datetime.now()}] {message.author} ({message.author.id}) - {message.content.lower()}.\n")
-        elif message.content.lower().startswith("nm!") and isinstance(message.channel,DMChannel):
-            print(f"[COMMAND] [IN DM] [{datetime.now()}] {message.author} ({message.author.id}) - {message.content.lower()}.\n")
-            
         
             return
+        
+        elif message.content.lower().startswith("nm!") and isinstance(message.channel,DMChannel):
+            print(f"[COMMAND] [IN DM] [{datetime.now()}] {message.author} ({message.author.id}) - {message.content.lower()}.\n")
+        
+            return
+        
         print(f"[MESSAGE] [{message.guild.name} - {message.guild.id} [{datetime.now()}] {message.author} ({message.author.id}) - {message.content.lower()}.\n")
 
     @commands.Cog.listener()
